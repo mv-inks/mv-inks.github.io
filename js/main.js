@@ -1,0 +1,319 @@
+/* ============================================
+   mv·inks — Main JavaScript
+   Particles, Cursor Glow, Typing, Tilt,
+   Loading Screen, Scroll Animations
+   ============================================ */
+
+(function () {
+  'use strict';
+
+  // --- Loading Screen ---
+  const loadingScreen = document.querySelector('.loading-screen');
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      if (loadingScreen) loadingScreen.classList.add('hidden');
+    }, 800);
+  });
+
+  // --- Scroll Progress Bar ---
+  const scrollProgress = document.querySelector('.scroll-progress');
+  function updateScrollProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    if (docHeight > 0 && scrollProgress) {
+      scrollProgress.style.width = (scrollTop / docHeight) * 100 + '%';
+    }
+  }
+
+  // --- Navigation scroll effect ---
+  const nav = document.querySelector('.nav');
+  function updateNav() {
+    if (!nav) return;
+    if (window.scrollY > 50) {
+      nav.classList.add('scrolled');
+    } else {
+      nav.classList.remove('scrolled');
+    }
+  }
+
+  // Combined scroll listener
+  window.addEventListener('scroll', () => {
+    updateScrollProgress();
+    updateNav();
+  }, { passive: true });
+
+  // --- Mobile Menu ---
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('active');
+      mobileMenu.classList.toggle('active');
+      document.body.style.overflow = mobileMenu.classList.contains('active') ? 'hidden' : '';
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('active');
+        mobileMenu.classList.remove('active');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  // --- Cursor Glow ---
+  const cursorGlow = document.querySelector('.cursor-glow');
+  if (cursorGlow && window.matchMedia('(hover: hover)').matches) {
+    let mx = 0, my = 0, cx = 0, cy = 0;
+    document.addEventListener('mousemove', (e) => {
+      mx = e.clientX;
+      my = e.clientY;
+    });
+    function animateCursor() {
+      cx += (mx - cx) * 0.1;
+      cy += (my - cy) * 0.1;
+      cursorGlow.style.left = cx + 'px';
+      cursorGlow.style.top = cy + 'px';
+      requestAnimationFrame(animateCursor);
+    }
+    animateCursor();
+  }
+
+  // --- Particle Canvas ---
+  const heroCanvas = document.getElementById('hero-particles');
+  if (heroCanvas) {
+    const ctx = heroCanvas.getContext('2d');
+    let particles = [];
+    const PARTICLE_COUNT = 60;
+
+    function resizeCanvas() {
+      const hero = heroCanvas.closest('.hero');
+      if (!hero) return;
+      heroCanvas.width = hero.offsetWidth;
+      heroCanvas.height = hero.offsetHeight;
+    }
+
+    class Particle {
+      constructor() {
+        this.reset();
+      }
+      reset() {
+        this.x = Math.random() * heroCanvas.width;
+        this.y = Math.random() * heroCanvas.height;
+        this.size = Math.random() * 2 + 0.5;
+        this.speedX = (Math.random() - 0.5) * 0.3;
+        this.speedY = (Math.random() - 0.5) * 0.3;
+        this.opacity = Math.random() * 0.4 + 0.1;
+      }
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        if (this.x < 0 || this.x > heroCanvas.width) this.speedX *= -1;
+        if (this.y < 0 || this.y > heroCanvas.height) this.speedY *= -1;
+      }
+      draw() {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(80, 129, 184, ${this.opacity})`;
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particles = [];
+      for (let i = 0; i < PARTICLE_COUNT; i++) {
+        particles.push(new Particle());
+      }
+    }
+
+    function drawLines() {
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(80, 129, 184, ${0.06 * (1 - dist / 120)})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+    }
+
+    function animateParticles() {
+      ctx.clearRect(0, 0, heroCanvas.width, heroCanvas.height);
+      particles.forEach(p => {
+        p.update();
+        p.draw();
+      });
+      drawLines();
+      requestAnimationFrame(animateParticles);
+    }
+
+    resizeCanvas();
+    initParticles();
+    animateParticles();
+    window.addEventListener('resize', () => {
+      resizeCanvas();
+      initParticles();
+    });
+  }
+
+  // --- Typing Effect ---
+  const typingEl = document.querySelector('.typing-text');
+  if (typingEl) {
+    const words = ['Mandala', 'Geometry', 'Dotwork', 'Fineline', 'Blackwork'];
+    let wordIndex = 0;
+    let charIndex = 0;
+    let isDeleting = false;
+
+    function typeLoop() {
+      const current = words[wordIndex];
+
+      if (isDeleting) {
+        charIndex--;
+        typingEl.textContent = current.substring(0, charIndex);
+      } else {
+        charIndex++;
+        typingEl.textContent = current.substring(0, charIndex);
+      }
+
+      let speed = isDeleting ? 40 : 80;
+
+      if (!isDeleting && charIndex === current.length) {
+        speed = 2000;
+        isDeleting = true;
+      } else if (isDeleting && charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        speed = 300;
+      }
+
+      setTimeout(typeLoop, speed);
+    }
+
+    setTimeout(typeLoop, 1200);
+  }
+
+  // --- IntersectionObserver Fade-In ---
+  const fadeElements = document.querySelectorAll('.fade-in, .fade-in-left, .fade-in-right');
+  if (fadeElements.length > 0) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+    fadeElements.forEach(el => observer.observe(el));
+  }
+
+  // --- 3D Tilt Effect on Cards ---
+  const tiltCards = document.querySelectorAll('.portfolio-card, .glass-card[data-tilt]');
+  tiltCards.forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+      const rect = card.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const centerX = rect.width / 2;
+      const centerY = rect.height / 2;
+      const rotateX = ((y - centerY) / centerY) * -6;
+      const rotateY = ((x - centerX) / centerX) * 6;
+      card.style.transform = `perspective(800px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+    });
+    card.addEventListener('mouseleave', () => {
+      card.style.transform = 'perspective(800px) rotateX(0) rotateY(0) scale(1)';
+    });
+  });
+
+  // --- Magnetic Buttons ---
+  const magneticBtns = document.querySelectorAll('.btn-primary, .btn-magnetic');
+  magneticBtns.forEach(btn => {
+    btn.addEventListener('mousemove', (e) => {
+      const rect = btn.getBoundingClientRect();
+      const x = e.clientX - rect.left - rect.width / 2;
+      const y = e.clientY - rect.top - rect.height / 2;
+      btn.style.transform = `translate(${x * 0.15}px, ${y * 0.15}px)`;
+    });
+    btn.addEventListener('mouseleave', () => {
+      btn.style.transform = 'translate(0, 0)';
+    });
+  });
+
+  // --- FAQ Accordion ---
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const question = item.querySelector('.faq-question');
+    const answer = item.querySelector('.faq-answer');
+    if (!question || !answer) return;
+
+    question.addEventListener('click', () => {
+      const isActive = item.classList.contains('active');
+
+      // Close all
+      faqItems.forEach(i => {
+        i.classList.remove('active');
+        const a = i.querySelector('.faq-answer');
+        if (a) a.style.maxHeight = null;
+      });
+
+      // Open clicked if it wasn't active
+      if (!isActive) {
+        item.classList.add('active');
+        answer.style.maxHeight = answer.scrollHeight + 'px';
+      }
+    });
+  });
+
+  // --- Booking Form: Conditional Month Dropdown ---
+  const zeitraumRadios = document.querySelectorAll('input[name="zeitraum"]');
+  const monthWrapper = document.querySelector('.month-select-wrapper');
+  if (zeitraumRadios.length && monthWrapper) {
+    zeitraumRadios.forEach(radio => {
+      radio.addEventListener('change', () => {
+        if (radio.value === 'wunschmonat' && radio.checked) {
+          monthWrapper.classList.add('visible');
+        } else {
+          monthWrapper.classList.remove('visible');
+        }
+      });
+    });
+  }
+
+  // --- Portfolio Filter ---
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const masonryItems = document.querySelectorAll('.masonry-item');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      masonryItems.forEach(item => {
+        if (filter === 'all' || item.dataset.category === filter) {
+          item.style.display = '';
+          setTimeout(() => { item.style.opacity = '1'; item.style.transform = 'scale(1)'; }, 10);
+        } else {
+          item.style.opacity = '0';
+          item.style.transform = 'scale(0.95)';
+          setTimeout(() => { item.style.display = 'none'; }, 300);
+        }
+      });
+    });
+  });
+
+  // --- Active Nav Link ---
+  const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+  document.querySelectorAll('.nav-links a, .mobile-menu a').forEach(link => {
+    const href = link.getAttribute('href');
+    if (href && (href === currentPage || (currentPage === '' && href === 'index.html'))) {
+      link.classList.add('active');
+    }
+  });
+
+
+})();
