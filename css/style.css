@@ -658,9 +658,9 @@ body::before {
   position: relative;
   z-index: 1;
   /* Transparent PNG – blended into mandala */
-  opacity: 0.75;
-  mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, black 55%, transparent 90%);
-  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 35%, black 55%, transparent 90%);
+  opacity: 0.85;
+  mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 40%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse 75% 65% at 50% 38%, black 40%, transparent 78%);
 }
 
 /* Rotating mandala behind portrait */
