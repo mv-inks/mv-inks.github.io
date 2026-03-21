@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tattoo Aftercare Shop – Coming Soon | mv·inks</title>
+  <meta name="description" content="mv·inks Shop: Professional tattoo aftercare products by Mavie Sommerfeld – coming soon. Sign up to be the first to know when the shop goes live.">
+  <meta property="og:title" content="Tattoo Aftercare Shop – Coming Soon | mv·inks">
+  <meta property="og:description" content="Professional tattoo aftercare products, personally tested and recommended. Coming soon.">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://mv-inks.de/img/og-image.jpg">
+  <link rel="canonical" href="https://mv-inks.de/en/shop.html">
+  <link rel="alternate" hreflang="de" href="https://mv-inks.de/shop.html">
+  <link rel="alternate" hreflang="en" href="https://mv-inks.de/en/shop.html">
+  <link rel="icon" type="image/svg+xml" href="../img/mandala-small-blue1.svg">
+  <link rel="preload" href="../fonts/inter-tight-v9-latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../fonts/inter-tight-v9-latin-600.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="theme-color" content="#0d1117">
+  <style>
+    .coming-soon-section {
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 6rem 1.5rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .coming-soon-bg-mandala {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: min(600px, 90vw);
+      height: min(600px, 90vw);
+      opacity: 0.04;
+      pointer-events: none;
+      user-select: none;
+    }
+    .coming-soon-card {
+      position: relative;
+      z-index: 1;
+      max-width: 640px;
+      width: 100%;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: 24px;
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      padding: 3.5rem 3rem;
+      text-align: center;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+    }
+    .coming-soon-mandala-icon {
+      width: 90px;
+      height: 90px;
+      margin: 0 auto 2rem;
+      opacity: 0.7;
+      display: block;
+    }
+    .coming-soon-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent, #a78bfa);
+      border: 1px solid rgba(167, 139, 250, 0.35);
+      border-radius: 100px;
+      padding: 0.35em 1em;
+      margin-bottom: 1.5rem;
+    }
+    .coming-soon-title {
+      font-size: clamp(1.6rem, 5vw, 2.4rem);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1.25rem;
+      color: #fff;
+    }
+    .coming-soon-subtitle {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 2.5rem;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .coming-soon-divider {
+      width: 48px;
+      height: 1px;
+      background: rgba(167, 139, 250, 0.4);
+      margin: 0 auto 2.5rem;
+    }
+    .coming-soon-cta-label {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: rgba(255, 255, 255, 0.5);
+      margin-bottom: 1rem;
+      letter-spacing: 0.03em;
+    }
+    .btn-whatsapp-notify {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: #25d366;
+      color: #fff;
+      font-size: 0.95rem;
+      font-weight: 600;
+      padding: 0.9rem 2rem;
+      border-radius: 100px;
+      text-decoration: none;
+      transition: background 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.3);
+      letter-spacing: 0.01em;
+    }
+    .btn-whatsapp-notify:hover {
+      background: #20bf5c;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 28px rgba(37, 211, 102, 0.4);
+    }
+    .btn-whatsapp-notify svg {
+      width: 20px;
+      height: 20px;
+      fill: #fff;
+      flex-shrink: 0;
+    }
+    .coming-soon-note {
+      margin-top: 1.5rem;
+      font-size: 0.78rem;
+      color: rgba(255, 255, 255, 0.3);
+    }
+    @media (max-width: 480px) {
+      .coming-soon-card { padding: 2.5rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-to-content">Skip to content</a>
+  <div class="loading-screen" aria-hidden="true">
+    <div class="loading-mandala">
+      <img src="../img/mandala-small-blue1.svg" alt="" width="60" height="60">
+    </div>
+  </div>
+  <div class="scroll-progress"></div>
+  <div class="cursor-glow" aria-hidden="true"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <a href="index.html">
+      <img src="../img/logo-white.svg" alt="mv·inks" class="nav-logo" width="140" height="28">
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="styles.html">Styles</a></li>
+      <li><a href="shop.html" class="active">Shop</a></li>
+      <li><a href="booking.html">Booking</a></li>
+      <li><a href="faq.html">FAQ</a></li>
+      <li><a href="aftercare.html">Aftercare</a></li>
+      <li class="lang-toggle">
+        <a href="../shop.html">DE</a>
+        <span>/</span>
+        <a href="shop.html" class="active">EN</a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="Open menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="mobile-menu">
+    <a href="index.html">Home</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="styles.html">Styles</a>
+    <a href="shop.html">Shop</a>
+    <a href="aftercare.html">Aftercare</a>
+    <a href="faq.html">FAQ</a>
+    <div class="mobile-menu-cta">
+      <a href="booking.html" class="btn-cta-mobile">Book Now <span class="arrow">&rarr;</span></a>
+      <div class="mobile-menu-social">
+        <a href="https://wa.me/4915159025721" target="_blank" rel="noopener"><svg class="wa-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg> WhatsApp</a>
+        <a href="https://instagram.com/mv.inks" target="_blank" rel="noopener"><svg class="ig-icon" viewBox="0 0 24 24" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg> @mv.inks</a>
+      </div>
+      <div class="mobile-menu-status"><span class="dot"></span> Books open – Appointments from March 2026</div>
+    </div>
+    <div class="lang-toggle">
+      <a href="../shop.html">DE</a>
+      <span>/</span>
+      <a href="shop.html" class="active">EN</a>
+    </div>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+    <section class="coming-soon-section">
+      <img src="../img/mandala-large-blue1.svg" alt="" class="coming-soon-bg-mandala" aria-hidden="true" width="600" height="600">
+      <div class="coming-soon-card fade-in" data-delay="2">
+        <img src="../img/mandala-large-blue1.svg" alt="" class="coming-soon-mandala-icon" aria-hidden="true" width="90" height="90">
+        <div class="coming-soon-badge">Coming Soon</div>
+        <h1 class="coming-soon-title">Tattoo Aftercare Products</h1>
+        <p class="coming-soon-subtitle">
+          We're working on our own aftercare line for your tattoos. Professional products, personally tested and recommended by me.
+        </p>
+        <div class="coming-soon-divider"></div>
+        <p class="coming-soon-cta-label">Be the first to know when the shop goes live</p>
+        <a
+          href="https://wa.me/4915159025721?text=Hi%20Mavie,%20I%27d%20like%20to%20be%20notified%20when%20the%20mv%C2%B7inks%20shop%20goes%20live!"
+          target="_blank"
+          rel="noopener"
+          class="btn-whatsapp-notify"
+          aria-label="Get notified via WhatsApp"
+        >
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Get Notified
+        </a>
+        <p class="coming-soon-note">No spam – just one message when the shop goes live.</p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="../img/logo-white.svg" alt="mv·inks" width="100" height="20" loading="lazy">
+        <p>Hand-poked tattoos – Mandala, Geometry, Dotwork, Realistic & Blackwork. Resident Artist at Heart Over Head Hamburg.</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="index.html">Home</a>
+        <a href="portfolio.html">Portfolio</a>
+        <a href="styles.html">Styles</a>
+        <a href="shop.html">Shop</a>
+        <a href="aftercare.html">Aftercare</a>
+        <a href="booking.html">Booking</a>
+        <a href="faq.html">FAQ</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://instagram.com/mv.inks" target="_blank" rel="noopener" class="instagram-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+          @mv.inks
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 mv·inks – Mavie Sommerfeld</p>
+      <div class="footer-legal">
+        <a href="legal.html">Legal Notice</a>
+        <a href="privacy.html">Privacy Policy</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+  <a href="https://wa.me/4915159025721" target="_blank" rel="noopener" class="whatsapp-float" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</body>
+</html>
