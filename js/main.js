@@ -460,36 +460,110 @@
   });
 
 
-  // --- Cookie Consent Banner ---
-  (function initCookieBanner() {
-    if (localStorage.getItem('mvinks-cookies')) return;
+  // --- Cookie Consent Manager ---
+  (function initCookieConsent() {
+    var consent = localStorage.getItem('mvinks-consent');
+    if (consent) return;
 
-    const isEN = window.location.pathname.includes('/en/');
-    const privacyLink = isEN ? 'privacy.html' : (window.location.pathname.includes('/en') ? 'en/privacy.html' : 'datenschutz.html');
-    const texts = isEN
-      ? { msg: 'This website uses essential cookies for functionality. No tracking cookies are used.', accept: 'Accept', reject: 'Reject', privacy: 'Privacy Policy' }
-      : { msg: 'Diese Website verwendet essenzielle Cookies für die Funktionalität. Es werden keine Tracking-Cookies eingesetzt.', accept: 'Akzeptieren', reject: 'Ablehnen', privacy: 'Datenschutz' };
+    var isEN = window.location.pathname.includes('/en');
+    var privacyLink = isEN ? '/en/privacy' : '/datenschutz';
+    var t = isEN ? {
+      title: 'Cookie Settings',
+      msg: 'We use cookies and similar technologies on our website. Some are essential for the site to function, others help us improve the user experience.',
+      essential: 'Essential',
+      essentialDesc: 'Required for basic site functionality (form consent, language preference). Cannot be disabled.',
+      functional: 'Functional',
+      functionalDesc: 'Remembers your preferences such as language selection and form data.',
+      acceptAll: 'Accept all',
+      rejectAll: 'Only essential',
+      settings: 'Settings',
+      save: 'Save selection',
+      privacy: 'Privacy Policy'
+    } : {
+      title: 'Cookie-Einstellungen',
+      msg: 'Wir verwenden Cookies und ähnliche Technologien auf unserer Website. Einige sind essenziell für den Betrieb der Seite, andere helfen uns, das Nutzererlebnis zu verbessern.',
+      essential: 'Essenziell',
+      essentialDesc: 'Notwendig für die Grundfunktionen der Website (Formular-Zustimmung, Sprachauswahl). Kann nicht deaktiviert werden.',
+      functional: 'Funktional',
+      functionalDesc: 'Speichert Ihre Einstellungen wie Sprachauswahl und Formulardaten.',
+      acceptAll: 'Alle akzeptieren',
+      rejectAll: 'Nur essenzielle',
+      settings: 'Einstellungen',
+      save: 'Auswahl speichern',
+      privacy: 'Datenschutzerklärung'
+    };
 
-    const banner = document.createElement('div');
-    banner.className = 'cookie-banner';
-    banner.innerHTML = '<p class="cookie-banner-text">' + texts.msg + ' <a href="' + privacyLink + '">' + texts.privacy + '</a></p>'
-      + '<div class="cookie-banner-buttons">'
-      + '<button class="cookie-btn cookie-btn-reject">' + texts.reject + '</button>'
-      + '<button class="cookie-btn cookie-btn-accept">' + texts.accept + '</button>'
-      + '</div>';
+    var overlay = document.createElement('div');
+    overlay.className = 'consent-overlay';
 
+    var banner = document.createElement('div');
+    banner.className = 'consent-banner';
+    banner.innerHTML =
+      '<div class="consent-header">' +
+        '<h3 class="consent-title">' + t.title + '</h3>' +
+      '</div>' +
+      '<p class="consent-text">' + t.msg + ' <a href="' + privacyLink + '">' + t.privacy + '</a></p>' +
+      '<div class="consent-details" style="display:none;">' +
+        '<div class="consent-category">' +
+          '<div class="consent-category-header">' +
+            '<div><strong>' + t.essential + '</strong><p class="consent-category-desc">' + t.essentialDesc + '</p></div>' +
+            '<label class="consent-toggle disabled"><input type="checkbox" checked disabled><span class="consent-slider"></span></label>' +
+          '</div>' +
+        '</div>' +
+        '<div class="consent-category">' +
+          '<div class="consent-category-header">' +
+            '<div><strong>' + t.functional + '</strong><p class="consent-category-desc">' + t.functionalDesc + '</p></div>' +
+            '<label class="consent-toggle"><input type="checkbox" id="consent-functional" checked><span class="consent-slider"></span></label>' +
+          '</div>' +
+        '</div>' +
+      '</div>' +
+      '<div class="consent-buttons">' +
+        '<button class="consent-btn consent-btn-settings">' + t.settings + '</button>' +
+        '<button class="consent-btn consent-btn-reject">' + t.rejectAll + '</button>' +
+        '<button class="consent-btn consent-btn-accept">' + t.acceptAll + '</button>' +
+      '</div>';
+
+    document.body.appendChild(overlay);
     document.body.appendChild(banner);
-    setTimeout(function() { banner.classList.add('visible'); }, 1000);
+    setTimeout(function() {
+      banner.classList.add('visible');
+      overlay.classList.add('visible');
+    }, 800);
 
-    banner.querySelector('.cookie-btn-accept').addEventListener('click', function() {
-      localStorage.setItem('mvinks-cookies', 'accepted');
+    function saveConsent(level) {
+      localStorage.setItem('mvinks-consent', JSON.stringify({ level: level, date: new Date().toISOString() }));
       banner.classList.remove('visible');
-      setTimeout(function() { banner.remove(); }, 400);
+      overlay.classList.remove('visible');
+      setTimeout(function() { banner.remove(); overlay.remove(); }, 400);
+    }
+
+    banner.querySelector('.consent-btn-accept').addEventListener('click', function() {
+      saveConsent('all');
     });
-    banner.querySelector('.cookie-btn-reject').addEventListener('click', function() {
-      localStorage.setItem('mvinks-cookies', 'rejected');
-      banner.classList.remove('visible');
-      setTimeout(function() { banner.remove(); }, 400);
+
+    banner.querySelector('.consent-btn-reject').addEventListener('click', function() {
+      saveConsent('essential');
+    });
+
+    var detailsVisible = false;
+    var settingsBtn = banner.querySelector('.consent-btn-settings');
+    var details = banner.querySelector('.consent-details');
+
+    settingsBtn.addEventListener('click', function() {
+      detailsVisible = !detailsVisible;
+      details.style.display = detailsVisible ? 'block' : 'none';
+      if (detailsVisible) {
+        settingsBtn.textContent = t.save;
+        settingsBtn.classList.add('consent-btn-save');
+        settingsBtn.classList.remove('consent-btn-settings');
+      }
+    });
+
+    settingsBtn.addEventListener('click', function() {
+      if (detailsVisible && settingsBtn.classList.contains('consent-btn-save')) {
+        var functional = document.getElementById('consent-functional').checked;
+        saveConsent(functional ? 'all' : 'essential');
+      }
     });
   })();
 
