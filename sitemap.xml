@@ -4,110 +4,162 @@
 
   <!-- DE: Startseite -->
   <url>
-    <loc>https://mvinks.de/</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mvinks.de/"/>
+    <loc>https://mv-inks.de/</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mv-inks.de/"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
   <!-- DE: Portfolio -->
   <url>
-    <loc>https://mvinks.de/portfolio.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/portfolio.html"/>
+    <loc>https://mv-inks.de/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/portfolio.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- DE: Stile -->
   <url>
-    <loc>https://mvinks.de/stile.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/stile.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/styles.html"/>
+    <loc>https://mv-inks.de/stile.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/stile.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/styles.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- DE: Shop -->
+  <url>
+    <loc>https://mv-inks.de/shop.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/shop.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/shop.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- DE: Anfrage -->
   <url>
-    <loc>https://mvinks.de/anfrage.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/anfrage.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/booking.html"/>
+    <loc>https://mv-inks.de/anfrage.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/anfrage.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/booking.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- DE: FAQ -->
   <url>
-    <loc>https://mvinks.de/faq.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/faq.html"/>
+    <loc>https://mv-inks.de/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/faq.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
   <!-- DE: Pflege -->
   <url>
-    <loc>https://mvinks.de/pflege.html</loc>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/pflege.html"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/aftercare.html"/>
+    <loc>https://mv-inks.de/pflege.html</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/pflege.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/aftercare.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
+  <!-- DE: Blog Hub -->
+  <url>
+    <loc>https://mv-inks.de/blog.html</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <!-- DE: Blog Artikel -->
+  <url>
+    <loc>https://mv-inks.de/blog-eigene-designs.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mv-inks.de/blog-design-prozess.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mv-inks.de/blog-erster-termin.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mv-inks.de/blog-schmerzen-heilung.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://mv-inks.de/blog-blackout.html</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+
   <!-- EN: Home -->
   <url>
-    <loc>https://mvinks.de/en/</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://mvinks.de/"/>
+    <loc>https://mv-inks.de/en/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://mv-inks.de/"/>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- EN: Portfolio -->
   <url>
-    <loc>https://mvinks.de/en/portfolio.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/portfolio.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/portfolio.html"/>
+    <loc>https://mv-inks.de/en/portfolio.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/portfolio.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/portfolio.html"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- EN: Styles -->
   <url>
-    <loc>https://mvinks.de/en/styles.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/styles.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/stile.html"/>
+    <loc>https://mv-inks.de/en/styles.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/styles.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/stile.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
 
+  <!-- EN: Shop -->
+  <url>
+    <loc>https://mv-inks.de/en/shop.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/shop.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/shop.html"/>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
   <!-- EN: Booking -->
   <url>
-    <loc>https://mvinks.de/en/booking.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/booking.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/anfrage.html"/>
+    <loc>https://mv-inks.de/en/booking.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/booking.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/anfrage.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <!-- EN: FAQ -->
   <url>
-    <loc>https://mvinks.de/en/faq.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/faq.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/faq.html"/>
+    <loc>https://mv-inks.de/en/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/faq.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <!-- EN: Aftercare -->
   <url>
-    <loc>https://mvinks.de/en/aftercare.html</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://mvinks.de/en/aftercare.html"/>
-    <xhtml:link rel="alternate" hreflang="de" href="https://mvinks.de/pflege.html"/>
+    <loc>https://mv-inks.de/en/aftercare.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://mv-inks.de/en/aftercare.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://mv-inks.de/pflege.html"/>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

@@ -4,4 +4,4 @@ Allow: /
 # Legal pages are noindexed via meta tags
 # but still accessible for crawlers
 
-Sitemap: https://mvinks.de/sitemap.xml
+Sitemap: https://mv-inks.de/sitemap.xml
