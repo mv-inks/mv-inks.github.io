@@ -1683,6 +1683,7 @@ body::before {
   display: none;
   text-align: center;
   padding: 3rem;
+  margin-bottom: 3rem;
 }
 
 .form-success.visible {
