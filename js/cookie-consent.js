@@ -52,9 +52,10 @@
     var isEnPage = window.location.pathname.indexOf('/en/') === 0;
     var privacyHref = isEnPage ? '/en/privacy' : '/datenschutz';
     var privacyLabel = isEnPage ? 'Privacy Policy' : 'Datenschutzerklärung';
+    var titleText = isEnPage ? 'Cookie Settings' : 'Cookie-Einstellungen';
     var textMain = isEnPage
-      ? 'We use Google Analytics to analyse traffic and improve our site. Your data will only be processed with your consent.'
-      : 'Wir verwenden Google Analytics, um Besuche zu analysieren und die Website zu verbessern. Deine Daten werden nur mit deiner Zustimmung verarbeitet.';
+      ? 'We use cookies and similar technologies on our website. Some are essential for the site to function, others help us analyse visits and improve your experience. You can find all details in our '
+      : 'Wir nutzen Cookies und \u00e4hnliche Technologien auf unserer Website. Einige sind technisch notwendig, andere helfen uns, Besuche auszuwerten und dein Erlebnis zu verbessern. Alle Details findest du in unserer ';
     var labelAccept = isEnPage ? 'Accept all' : 'Alle akzeptieren';
     var labelDecline = isEnPage ? 'Necessary only' : 'Nur notwendige';
 
@@ -64,7 +65,8 @@
     banner.setAttribute('aria-label', isEnPage ? 'Cookie consent' : 'Cookie-Einstellungen');
     banner.innerHTML =
       '<div class="cc-inner">' +
-        '<p class="cc-text">' + textMain + ' <a href="' + privacyHref + '" class="cc-link">' + privacyLabel + '</a></p>' +
+        '<h3 class="cc-title">' + titleText + '</h3>' +
+        '<p class="cc-text">' + textMain + '<a href="' + privacyHref + '" class="cc-link">' + privacyLabel + '</a>.</p>' +
         '<div class="cc-buttons">' +
           '<button id="cc-decline" class="cc-btn cc-btn--secondary">' + labelDecline + '</button>' +
           '<button id="cc-accept" class="cc-btn cc-btn--primary">' + labelAccept + '</button>' +
@@ -87,8 +89,12 @@
         'border:1px solid rgba(74,158,173,.25);',
         'border-radius:12px;',
         'padding:1.25rem 1.5rem;',
-        'display:flex;flex-wrap:wrap;align-items:center;gap:1rem;',
+        'display:flex;flex-direction:column;gap:.75rem;',
         'box-shadow:0 -4px 32px rgba(0,0,0,.5);',
+      '}',
+      '.cc-title{',
+        'margin:0 0 .5rem;font-size:1rem;font-weight:700;',
+        'color:#f5f0e8;font-family:inherit;',
       '}',
       '.cc-text{',
         'flex:1 1 280px;margin:0;',
@@ -98,7 +104,7 @@
       '}',
       '.cc-link{color:#4a9ead;text-decoration:underline;text-underline-offset:2px;}',
       '.cc-link:hover{color:#6bbccc;}',
-      '.cc-buttons{display:flex;gap:.75rem;flex-shrink:0;flex-wrap:wrap;}',
+      '.cc-buttons{display:flex;gap:.75rem;flex-wrap:wrap;}',
       '.cc-btn{',
         'cursor:pointer;border:none;border-radius:8px;',
         'padding:.6rem 1.25rem;font-size:.875rem;font-weight:600;',
