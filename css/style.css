@@ -2058,8 +2058,10 @@ body::before {
 
 .style-visual {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0.5rem;
   padding: 1rem;
 }
 
@@ -2070,8 +2072,31 @@ body::before {
   transition: opacity var(--transition);
 }
 
+.style-visual img.style-photo {
+  max-width: 160px;
+  width: 160px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.75;
+}
+
+.style-visual img.style-photo-sm {
+  max-width: 160px;
+  width: 160px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 8px;
+  opacity: 0.75;
+}
+
 .style-item:hover .style-visual img {
   opacity: 0.65;
+}
+
+.style-item:hover .style-visual img.style-photo,
+.style-item:hover .style-visual img.style-photo-sm {
+  opacity: 0.95;
 }
 
 .style-info h2 {
@@ -2257,9 +2282,12 @@ body::before {
 /* --- Studios Info --- */
 .studios-info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 1.5rem;
   margin-top: 1.5rem;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .studio-card {
