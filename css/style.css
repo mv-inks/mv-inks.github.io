@@ -3143,3 +3143,40 @@ button:focus:not(:focus-visible) {
 }
 
 /* Cookie consent styles are now in /js/cookie-consent.js (inline) */
+
+/* Wanna Do Section */
+.wannado-section {
+  padding: 6rem 2rem;
+}
+
+.wannado-grid {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.wannado-tag {
+  background: rgba(74, 158, 255, 0.3) !important;
+  color: #4a9eff !important;
+  border: 1px solid rgba(74, 158, 255, 0.5);
+}
+
+.wannado-item {
+  position: relative;
+}
+
+.wannado-item::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 2px solid transparent;
+  border-radius: inherit;
+  transition: border-color 0.3s ease;
+  pointer-events: none;
+}
+
+.wannado-item:hover::after {
+  border-color: rgba(74, 158, 255, 0.5);
+}
