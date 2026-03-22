@@ -285,6 +285,24 @@
     });
   }
 
+  // --- Portfolio Tabs (Meine Arbeiten / Wanna Do's) ---
+  var portfolioTabs = document.querySelectorAll('.portfolio-tab');
+  portfolioTabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      portfolioTabs.forEach(function(t) { t.classList.remove('active'); });
+      tab.classList.add('active');
+      var target = tab.dataset.tab;
+      document.querySelectorAll('.portfolio-tab-content').forEach(function(content) {
+        content.classList.remove('active');
+      });
+      var targetEl = document.getElementById('tab-' + target);
+      if (targetEl) targetEl.classList.add('active');
+      // Scroll to top of section
+      var section = document.getElementById('main-content');
+      if (section) window.scrollTo({ top: section.offsetTop - 80, behavior: 'smooth' });
+    });
+  });
+
   // --- Portfolio Filter ---
   const filterBtns = document.querySelectorAll('.filter-btn');
   const masonryItems = document.querySelectorAll('.masonry-item');

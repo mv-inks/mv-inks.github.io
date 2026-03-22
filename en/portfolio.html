@@ -123,8 +123,17 @@
     <div class="page-header fade-in">
       <p class="section-subtitle">Portfolio</p>
       <h1 class="section-title">My Work</h1>
-      <p>Every tattoo tells a story. Here you'll find a selection of my previous works – from detailed realistic pieces to large-scale mandalas.</p>
+      <p>Every tattoo tells a story. Browse my previous works or secure one of my available Wanna Do designs.</p>
     </div>
+
+    <!-- Portfolio Tabs -->
+    <div class="portfolio-tabs fade-in">
+      <button class="portfolio-tab active" data-tab="works">My Work</button>
+      <button class="portfolio-tab" data-tab="wannados">Wanna Do's</button>
+    </div>
+
+    <!-- Tab: My Work -->
+    <div class="portfolio-tab-content active" id="tab-works">
 
     <!-- Filter -->
     <div class="filter-bar fade-in" data-delay="1">
@@ -434,17 +443,18 @@
         Request your own design <span class="arrow">→</span>
       </a>
     </div>
-  </section>
 
-  <!-- Wanna Do's -->
-  <section class="wannado-section section">
-    <div class="page-header fade-in">
-      <p class="section-subtitle">Wanna Do's</p>
+    </div><!-- /tab-works -->
+
+    <!-- Tab: Wanna Do's -->
+    <div class="portfolio-tab-content" id="tab-wannados">
+
+    <div class="wannado-header">
       <h2 class="section-title">Available Designs</h2>
       <p>These designs are waiting to be tattooed. If you like one, secure it – each Wanna Do will only be done once.</p>
     </div>
 
-    <div class="masonry-grid wannado-grid fade-in" data-delay="1">
+    <div class="masonry-grid wannado-grid">
 
       <div class="masonry-item wannado-item">
         <img src="../img/wannado-1.jpg" alt="Wanna Do Design" style="width:100%;display:block" loading="lazy">
@@ -578,12 +588,15 @@
 
     </div>
 
-    <div class="text-center mt-4 fade-in">
+    <div class="text-center mt-4">
       <p style="color: rgba(245, 240, 232, 0.5); margin-bottom: 1.5rem;">Like a design? Just write me with the image and secure it.</p>
       <a href="/en/booking" class="btn btn-primary">
         Request Wanna Do <span class="arrow">→</span>
       </a>
     </div>
+
+    </div><!-- /tab-wannados -->
+
   </section>
 
   <!-- Footer -->

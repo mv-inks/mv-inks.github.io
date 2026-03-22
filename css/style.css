@@ -3146,17 +3146,64 @@ button:focus:not(:focus-visible) {
 /* Cookie consent styles are now in /js/cookie-consent.js (inline) */
 
 /* Wanna Do Section */
-.wannado-section {
-  padding: 6rem 2rem;
-  border-top: 1px solid var(--glass-border);
-  margin-top: 2rem;
+/* Portfolio Tabs */
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid var(--glass-border);
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.wannado-section .page-header,
-.wannado-section .wannado-grid,
-.wannado-section .text-center {
-  opacity: 1 !important;
-  transform: none !important;
+.portfolio-tab {
+  background: none;
+  border: none;
+  color: rgba(245, 240, 232, 0.4);
+  font-family: var(--font);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  transition: color var(--transition), border-color var(--transition);
+  border-bottom: 2px solid transparent;
+  position: relative;
+  bottom: -1px;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-tab:hover {
+  color: rgba(245, 240, 232, 0.7);
+}
+
+.portfolio-tab.active {
+  color: var(--cream);
+  border-bottom-color: var(--blue);
+}
+
+.portfolio-tab-content {
+  display: none;
+}
+
+.portfolio-tab-content.active {
+  display: block;
+}
+
+.wannado-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.wannado-header .section-title {
+  margin-bottom: 0.75rem;
+}
+
+.wannado-header p {
+  color: rgba(245, 240, 232, 0.5);
+  max-width: 600px;
+  margin: 0 auto;
 }
 
 .wannado-grid {
