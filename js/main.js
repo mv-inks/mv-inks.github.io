@@ -307,6 +307,33 @@
     });
   });
 
+  // --- Masonry Item Touch Toggle (Mobile) ---
+  if ('ontouchstart' in window) {
+    var activeItem = null;
+    document.querySelectorAll('.masonry-item').forEach(function(item) {
+      item.addEventListener('click', function(e) {
+        if (activeItem === item) {
+          // Second tap: follow the link if tapped on CTA
+          if (e.target.closest('.masonry-cta')) return;
+          item.classList.remove('active');
+          activeItem = null;
+        } else {
+          if (activeItem) activeItem.classList.remove('active');
+          item.classList.add('active');
+          activeItem = item;
+          e.preventDefault();
+        }
+      });
+    });
+    // Close overlay when tapping outside
+    document.addEventListener('click', function(e) {
+      if (activeItem && !e.target.closest('.masonry-item')) {
+        activeItem.classList.remove('active');
+        activeItem = null;
+      }
+    });
+  }
+
   // --- Portfolio Slider ---
   const portfolioTrack = document.querySelector('.portfolio-track');
   const portfolioPrev = document.querySelector('.portfolio-prev');

@@ -1129,7 +1129,8 @@ body::before {
   padding: 1.5rem;
 }
 
-.masonry-item:hover .masonry-overlay {
+.masonry-item:hover .masonry-overlay,
+.masonry-item.active .masonry-overlay {
   opacity: 1;
 }
 
