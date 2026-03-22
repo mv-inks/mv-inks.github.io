@@ -3148,6 +3148,15 @@ button:focus:not(:focus-visible) {
 /* Wanna Do Section */
 .wannado-section {
   padding: 6rem 2rem;
+  border-top: 1px solid var(--glass-border);
+  margin-top: 2rem;
+}
+
+.wannado-section .page-header,
+.wannado-section .wannado-grid,
+.wannado-section .text-center {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
 .wannado-grid {
