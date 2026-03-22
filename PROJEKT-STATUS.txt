@@ -1,41 +1,48 @@
 ===============================================
   mv·inks — Projekt-Status & Launch-Checkliste
-  Stand: 15.02.2026
+  Stand: 22.03.2026
 ===============================================
 
 
-1. WAS DIE SEITE KANN
+1. AKTUELLER STAND
+---------------------
+
+Die Website ist LIVE unter mv-inks.de (GitHub Pages + Custom Domain).
+Google Business Profil, GA4 Tracking und Google Search Console sind eingerichtet.
+E-Mail: info@mv-inks.de (Google Workspace)
+
+
+2. WAS DIE SEITE KANN
 ---------------------
 
 Homepage (index.html)
-- Hero mit Typing-Effekt (Mandala, Geometry, Dotwork, Fineline, Blackwork)
+- Hero mit Typing-Effekt (Mandala, Geometry, Dotwork, Realistic, Blackwork, Abstract)
 - Partikel-Animation im Hintergrund
-- Portfolio-Preview mit 6 Arbeiten
-- About-Teaser über Mavie
+- Portfolio-Preview Slider mit 4 Arbeiten
+- About-Teaser ueber Mavie
 - Philosophie-Sektion
-- Testimonials (4 Kundenstimmen im 2x2 Grid)
+- Testimonials (5 echte Kundenstimmen, Swipe-Slider)
 - Instagram CTA mit Vorschau-Grid
-- WhatsApp Nummer-Capture (Lead-Generierung)
 - WhatsApp Float-Button auf jeder Seite
 
 Portfolio (portfolio.html)
-- Masonry-Grid mit Filterung nach Stil (All, Mandala, Dotwork, Fineline, Geometric, Blackwork)
-- Hover-Effekte mit 3D-Tilt
+- Tab-Navigation: "Meine Arbeiten" / "Wanna Do's"
+- 25 Portfolio-Werke im Masonry-Grid
+- Kategorie-Filter: Alle, Mandala/Geometry, Realistic, Blackwork, Abstract, Healed
+- 13 Wanna Do Designs mit Anfrage-Button
+- Touch-Overlay fuer Mobile (Tap auf Bild zeigt Overlay)
+- Glasmorphe Tab-Buttons mit blauem aktiven Tab
 
 Stile (stile.html)
-- Erklaerung aller Tattoo-Stile die Mavie anbietet
+- 6 Tattoo-Stile: Mandala, Geometry, Dotwork, Realistic, Blackwork, Abstract
 - Visuell aufbereitet mit Beispielbildern
 
 Shop (shop.html)
-- 4 Produkte: Aftercare Kit (39.90), Healing Cream (14.90), Cleansing Wash (12.90), Sun Shield SPF 50+ (17.90)
-- Bestellung per WhatsApp-Button (kein Warenkorb/Checkout noetig)
-- Trust-Banner und Vertrauenspunkte
+- Coming Soon Teaser (Produkte noch nicht verfuegbar)
 
-Blog (blog.html + 4 Artikel)
-- "Wie erkenne ich ein gutes Tattoo-Studio?"
-- "Die 7 haeufigsten Tattoo-Pflege Fehler"
-- "Mandala Tattoo — Bedeutung, Symbolik & Inspiration"
-- "Dein erstes Tattoo: Alles was du wissen musst"
+Blog (blog.html + 5 Artikel)
+- "Eigene Designs" / "Design-Prozess" / "Erster Termin" / "Schmerzen & Heilung" / "Blackout"
+- Subtitle: "Tipps, Wissen und Einblicke in meine persoenliche Erfahrung"
 - SEO-optimiert fuer organischen Traffic
 
 Anfrage (anfrage.html)
@@ -44,16 +51,18 @@ Anfrage (anfrage.html)
 
 Pflege (pflege.html)
 - Komplette Aftercare-Anleitung (Tag 1 bis Langzeitpflege)
-- Timeline-Design
-- Warnhinweise und Vermeidungsliste
+- Folie: 2-3 Stunden oder am naechsten Morgen
+- Pellphase statt Schaelphase
+- Sport: ca. 2 Wochen Pause
+- Timeline-Design mit Warnhinweisen
 
 FAQ (faq.html)
-- Haeufig gestellte Fragen mit Akkordeon
+- 15 haeufig gestellte Fragen mit Akkordeon
 
 Rechtliches
-- Impressum (impressum.html)
+- Impressum (impressum.html) — Platzhalter muessen noch ausgefuellt werden!
 - Datenschutz (datenschutz.html)
-- DSGVO-konform, keine externen Fonts (selbst gehostet)
+- DSGVO-konform: selbst gehostete Fonts, Cookie-Consent vor GA4
 
 404-Seite
 - Gebrandete Fehlerseite
@@ -63,115 +72,85 @@ Technisches
 - Responsive Design (Desktop, Tablet, Mobile)
 - Englische Version aller Hauptseiten unter /en/
 - SEO: Meta-Tags, Open Graph, Twitter Cards, Structured Data, robots.txt, sitemap.xml
-- Performance: Font-Preloading, Lazy Loading fuer Bilder
+- Performance: Font-Preloading, Lazy Loading, Bilder optimiert (~11 MB statt ~80 MB)
 - Barrierefreiheit: Skip-to-Content, ARIA-Labels
-- CNAME fuer Custom Domain eingerichtet
+- GA4 mit Cookie-Consent (nur nach Opt-in)
+- Google Search Console + Sitemap eingereicht
+- Custom Domain + SSL/HTTPS
 
 
-2. WAS VOR DEM LAUNCH NOCH FEHLT
----------------------------------
+3. WAS NOCH OFFEN IST
+-----------------------
 
-KRITISCH (muss vor Launch erledigt sein):
+KRITISCH (muss noch erledigt werden):
 
-[ ] Shop-Produkte: Haendler/Lieferant fuer Tattoo-Pflegeprodukte finden
-    - Aftercare Kit, Healing Cream, Cleansing Wash, Sun Shield
-    - Optionen: White-Label Produkte, Dropshipping, oder eigene Marke
-    - Preise im Shop muessen ggf. angepasst werden wenn Einkaufspreise feststehen
-    - Alternativ: Shop-Seite erstmal ausblenden bis Produkte verfuegbar sind
+[ ] Impressum vervollstaendigen
+    - Platzhalter: [Strasse Nr.], [PLZ Ort], [email], [USt-IdNr.]
+    - Mavie muss diese Daten liefern
 
-[ ] Echte Bilder einsetzen
-    - Portfolio: Echte Tattoo-Fotos von Mavies Arbeiten (aktuell Platzhalter-SVGs)
-    - Blog: Artikelbilder (aktuell Platzhalter-SVGs)
-    - Instagram-Grid: Echte Instagram-Posts verlinken
-    - About/Hero: Foto von Mavie
-    - OG-Image (og-image.jpg) fuer Social Media Sharing erstellen
+[ ] Datenschutz vervollstaendigen
+    - Gleiche Platzhalter-Adresse wie Impressum
 
-[ ] Kontaktdaten pruefen
-    - WhatsApp-Nummer (4915159025721) — stimmt die?
-    - Impressum: Adresse, Steuernummer, USt-ID pruefen
-    - Instagram-Handle (@mv.inks) pruefen
+[ ] DSGVO-Checkbox im Anfrageformular
+    - Fehlt noch komplett
 
-[ ] Domain & Hosting
-    - CNAME zeigt auf mvinks.de — DNS korrekt konfigurieren
-    - SSL-Zertifikat (HTTPS) sicherstellen
-    - Hosting einrichten (z.B. GitHub Pages, Netlify, Vercel)
+WICHTIG:
 
-WICHTIG (sollte zeitnah erledigt werden):
+[ ] Hero-Portrait: Schwarzer Kasten um das Bild beheben
+[ ] EN-Seiten nachziehen (Portfolio-Slider, Testimonials, neue Bilder)
+[ ] Schema.org: telephone + email befuellen oder entfernen
+[ ] Accessibility verbessern (ARIA-Labels, prefers-reduced-motion)
 
-[ ] Google Analytics / Tracking einrichten
-    - GA4 Property anlegen
-    - Tracking-Code einbauen
-    - Events tracken (WhatsApp Klicks, Formular-Absendungen, Shop-Klicks)
+SEO & MARKETING:
 
-[ ] Google Search Console einrichten
-    - Seite verifizieren
-    - Sitemap einreichen (sitemap.xml ist schon da)
-
-[ ] Testimonials pruefen
-    - Sind die 4 Kundenstimmen echt? Namen und Texte pruefen
-    - Ggf. echte Bewertungen von Kunden einholen
-
-[ ] WhatsApp Business einrichten
-    - Business-Profil mit Logo, Oeffnungszeiten, Beschreibung
-    - Automatische Begruessung einrichten
-    - Katalog fuer Shop-Produkte anlegen
-    - Broadcast-Listen fuer Marketing vorbereiten
-
-[ ] Blog-Bilder
-    - Fuer jeden Artikel ein passendes Header-Bild erstellen/beschaffen
-    - Alt-Texte anpassen
-
-NICE TO HAVE (nach Launch):
-
-[ ] Google Business Profil fuer beide Standorte (Hamburg & Heeslingen)
-[ ] Cookie-Banner (aktuell nicht noetig da kein Tracking, aber wenn GA4 kommt)
-[ ] Newsletter/E-Mail Marketing aufbauen
-[ ] Weitere Blog-Artikel fuer SEO
-[ ] Bewertungen auf Google sammeln
+[ ] Google Reviews sammeln (Ziel: 20 in 60 Tagen)
+[ ] Backlink von Heart Over Head anfragen
+[ ] Verzeichnis-Eintraege: feelfarbig.com, tattoodo.com, tattooscout.de
+[ ] Stil-Landingpages: /mandala-tattoo-hamburg, /dotwork-tattoo-hamburg etc.
 [ ] Social Media Strategie (regelmaessige Posts)
-[ ] Termin-Buchungssystem (Calendly o.ae.) statt nur Anfrage-Formular
-[ ] Online-Bezahlung fuer Shop (Stripe, PayPal) wenn Volumen steigt
+
+NICE TO HAVE (spaeter):
+
+[ ] Portfolio-Lightbox (Klick auf Bild -> Grossansicht)
+[ ] Preisangabe (Mindestpreis/Stundenrate)
+[ ] Online-Kalender (Calendly/Booksy)
+[ ] Newsletter/E-Mail Marketing
+[ ] WebP-Bildvarianten fuer noch bessere Performance
+[ ] Shop-Produkte: Haendler/Lieferant finden
+[ ] Online-Bezahlung fuer Shop (Stripe, PayPal)
 
 
-3. SHOP — NAECHSTE SCHRITTE
+4. ERLEDIGTE MEILENSTEINE
 ----------------------------
 
-Aktueller Stand:
-- Shop-Seite ist gebaut mit 4 Produkten
-- Bestellung laeuft ueber WhatsApp (kein Checkout noetig)
-- Preise sind Platzhalter und muessen angepasst werden
-
-Was zu klaeren ist:
-1. Produkte selbst herstellen lassen (White-Label)?
-   - Vorteil: Eigene Marke "mv·inks", hoehe Marge
-   - Nachteil: Mindestbestellmengen, Vorabinvestition, Lagerung
-
-2. Dropshipping / Reselling?
-   - Vorteil: Kein Lager, kein Risiko
-   - Nachteil: Weniger Kontrolle, niedrigere Marge
-
-3. Bekannte Marken weiterverkaufen?
-   - z.B. Hustle Butter, Bepanthen Tattoo, TattooMed
-   - Vorteil: Kunden kennen die Marken
-   - Nachteil: Konkurrenz mit Amazon etc.
-
-Empfehlung: Mit White-Label starten (z.B. ueber Anbieter wie
-Dermatest-zertifizierte Labore) und als "mv·inks Aftercare" branden.
-Kleine Startmenge (50-100 Stueck), ueber WhatsApp verkaufen,
-bei Nachfrage skalieren.
+[x] Website live unter mv-inks.de (GitHub Pages)
+[x] Google Business Profil eingerichtet
+[x] GA4 + Cookie-Consent implementiert
+[x] Google Search Console + Sitemap
+[x] 41 echte Tattoo-Fotos eingebaut und optimiert
+[x] Abstract als neuer Stil hinzugefuegt
+[x] Wanna Do's mit Tab-Navigation im Portfolio
+[x] "Handgestochene" -> "Individuelle" Tattoos umbenannt
+[x] Pflege-Seite korrigiert (Folie, Pellphase, Sport)
+[x] Touch-Overlay fuer Mobile Portfolio
+[x] Bilder komprimiert (85% kleiner)
+[x] Blog-Subtitle aktualisiert
+[x] Realistic Mandala als Healed markiert
+[x] Portfolio Tab-Design verbessert (glasmorph)
+[x] IntersectionObserver fuer grosse Grids optimiert
 
 
-4. TECHNISCHE DETAILS
+5. TECHNISCHE DETAILS
 ----------------------
 
 Dateistruktur:
 /mvinks
   index.html          — Homepage
-  portfolio.html      — Portfolio
-  stile.html          — Tattoo-Stile
-  shop.html           — Shop
+  portfolio.html      — Portfolio (Tabs: Arbeiten / Wanna Do's)
+  stile.html          — Tattoo-Stile (6 Stueck)
+  shop.html           — Shop (Coming Soon)
   blog.html           — Blog-Uebersicht
-  blog-*.html         — Blog-Artikel (4 Stueck)
+  blog-*.html         — Blog-Artikel (5 Stueck)
   anfrage.html        — Booking/Anfrage
   pflege.html         — Aftercare Guide
   faq.html            — FAQ
@@ -180,11 +159,12 @@ Dateistruktur:
   404.html            — Fehlerseite
   robots.txt          — Suchmaschinen-Steuerung
   sitemap.xml         — Sitemap fuer Google
-  CNAME               — Custom Domain
+  CNAME               — Custom Domain (mv-inks.de)
   css/style.css       — Stylesheet
   js/main.js          — JavaScript
+  js/cookie-consent.js — Cookie-Consent + GA4
   fonts/              — Selbst gehostete Schriften (Inter Tight)
-  img/                — Bilder und SVGs
+  img/                — 41 optimierte Bilder
   en/                 — Englische Version (8 Seiten)
 
 Design:
@@ -192,6 +172,16 @@ Design:
 - Glassmorphism-Stil (halbtransparente Karten mit Blur)
 - Akzentfarben: Blau (#264090, #5081b8), Creme (#f5f0e8)
 - Schrift: Inter Tight (selbst gehostet, DSGVO-konform)
+
+Bilder (img/):
+- 9 Mandala (inkl. 1 healed)
+- 4 Blackwork (inkl. 1 healed)
+- 3 Geometry (inkl. 1 realistic-healed)
+- 7 Abstract (inkl. blackwork + geometry Kombinationen)
+- 2 Realistic
+- 3 Showcase
+- 13 Wanna Do's
+- Portraits + Logos + Icons
 
 
 ===============================================
